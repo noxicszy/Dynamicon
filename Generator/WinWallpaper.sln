@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallpaperApp", "WallpaperApp\WallpaperApp.csproj", "{B0A81145-712A-4AE9-9708-923B9F713F98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils", "CommonUtils\CommonUtils.csproj", "{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0A81145-712A-4AE9-9708-923B9F713F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A81145-712A-4AE9-9708-923B9F713F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A81145-712A-4AE9-9708-923B9F713F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A81145-712A-4AE9-9708-923B9F713F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4D77E65-EBC6-4F1C-BC51-163F22CCB333}
+	EndGlobalSection
+EndGlobal
