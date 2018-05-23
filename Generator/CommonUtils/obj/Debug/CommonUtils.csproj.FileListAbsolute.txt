@@ -47,3 +47,11 @@ C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.csp
 C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
 C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.dll
 C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
+D:\Projects\Dynamicon_app\Generator\CommonUtils\bin\Debug\CommonUtils.dll
+D:\Projects\Dynamicon_app\Generator\CommonUtils\bin\Debug\CommonUtils.pdb
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\CommonUtils.csprojAssemblyReference.cache
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\Interop.IWshRuntimeLibrary.dll
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.ResolveComReference.cache
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\CommonUtils.dll
+D:\Projects\Dynamicon_app\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
