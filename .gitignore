@@ -20,6 +20,3 @@ bin-release/
 *.rm
 *.wmv
 *.flv
-
-# Specific Files
- iconList.txt

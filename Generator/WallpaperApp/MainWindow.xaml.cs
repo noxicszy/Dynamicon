@@ -60,9 +60,10 @@ namespace WallpaperApp
             string cmdstr = Path + "\\electron-v2.0.1-win32-x64\\electron.exe " + Path + "\\my_app";
             c.execute(cmdstr);
             IntPtr desktophandle = Win32.User32.GetDesktopWindow();
-            IntPtr windowHandle2 = (IntPtr)0;
+            IntPtr windowHandle2 = IntPtr.Zero;
             //抓取electron窗口句柄
-            while (windowHandle2 == (IntPtr)0)
+            System.Threading.Thread.Sleep(1000);
+            while (windowHandle2 == IntPtr.Zero)
                 windowHandle2 = Win32.User32.FindWindow(null, "dynamicon");
 
             //抓取桌面层句柄
@@ -94,8 +95,6 @@ namespace WallpaperApp
         {
             AddTrayIcon();
             this.Hide();
-            //CommonUtils.CMD c = new CMD();
-            //c.execute("taskkill /im testWindow /f");
         }
 
         private void EndTask() {
@@ -123,19 +122,17 @@ namespace WallpaperApp
 
             ContextMenu menu = new ContextMenu();
 
-            MenuItem closeItem = new MenuItem();
-            closeItem.Text = "资源管理器";
-            closeItem.Click += new EventHandler(delegate
+            MenuItem closeItem2 = new MenuItem();
+            closeItem2.Text = "资源管理器";
+            closeItem2.Click += new EventHandler(delegate
             {
                 CommonUtils.CMD c = new CMD();
                 c.execute("explorer.exe");
-                //EndTask();
-                //Environment.Exit(0);
             });
 
-            MenuItem closeItem2 = new MenuItem();
-            closeItem2.Text = "退出";
-            closeItem2.Click += new EventHandler(delegate
+            MenuItem closeItem = new MenuItem();
+            closeItem.Text = "退出";
+            closeItem.Click += new EventHandler(delegate
             {
                 CommonUtils.CMD c = new CMD();
                 c.execute("taskkill /im electron.exe /f");
