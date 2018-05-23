@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using IWshRuntimeLibrary;
 
 namespace CommonUtils {
 
@@ -22,6 +24,8 @@ namespace CommonUtils {
             }
         }
 
+        IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
+
         public void getDesktopFile() {
             //获取桌面图标
             String path = "C:\\Users\\";
@@ -34,7 +38,12 @@ namespace CommonUtils {
             path = path + "Desktop\\";
             DirectoryInfo rootEx = new DirectoryInfo(path);
             foreach (FileInfo f in rootEx.GetFiles()) {
-                sw.WriteLine(path + f.Name);
+                string filePath = path + f.Name;
+                if (f.Name.Contains("lnk")) {
+                    IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(filePath);
+                    sw.WriteLine(shortcut.TargetPath);
+                }
+                else sw.WriteLine(filePath);
             }
             if (sw != null) sw.Close();
         }

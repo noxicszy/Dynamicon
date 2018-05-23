@@ -39,3 +39,11 @@ D:\Generator\CommonUtils\obj\Debug\CommonUtils.csprojResolveAssemblyReference.ca
 D:\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
 D:\Generator\CommonUtils\obj\Debug\CommonUtils.dll
 D:\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\bin\Debug\CommonUtils.dll
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\bin\Debug\CommonUtils.pdb
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.csprojResolveAssemblyReference.cache
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.ResolveComReference.cache
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.dll
+C:\Users\yyyuy\Desktop\Dynamicon\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
