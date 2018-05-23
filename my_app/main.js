@@ -10,6 +10,7 @@ let win
 function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
+        webPreferences: { webSecurity: false },
         width: 1400,
         height: 800,
         frame: false,
@@ -25,7 +26,7 @@ function createWindow() {
     }))
 
     ifTest = true;
-    ifTest = false;
+    // ifTest = false;
     if(!ifTest)
         win.maximize();
     else

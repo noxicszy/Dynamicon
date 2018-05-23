@@ -9,13 +9,13 @@ IE does not support transform-style:preserve3d, so the 3D may look a little flat
 Once again IE proves its ability to hinder progress and inflict pain on developers.
 http://msdn.microsoft.com/en-us/library/ie/hh673529(v=vs.85).aspx#_3dtranslate
 */
-const cubeSize = 64;
+const cubeSize = 50;
 var trans3DDemo1 = $("#trans3DDemo1"), 
     trans3DBoxes1 = $("#trans3DBoxes1"),// div containing all the the boxes
     boxes1 = $("#trans3DBoxes1 div"), // all the boxes
     threeDTimeline = new TimelineMax({onUpdate:updateCube, repeat:-1}),
-	stageW = ($(window).width())/2,
-	stageH = ($(window).height())/2,
+	stageW = ($(window).width()) / 70;
+	stageH = ($(window).height()) / 40;
 	stageX = (stageW-(trans3DBoxes1.width()/2)),
 	stageY = (stageH-(cubeSize/2));
 
@@ -32,13 +32,13 @@ boxes1[3] = topside
 boxes1[4] = bottomside
 boxes1[5] = backside
 */
-threeDTimeline.set(boxes1[0], {rotationX:0, rotationY:0, x:0, y:0, z:cubeSize/2, opacity:0.85})
-              .set(boxes1[1], {rotationX:0, rotationY:-90, x:-cubeSize/2, y:0, z:0, opacity:0.85})
-			  .set(boxes1[2], {rotationX:0, rotationY:90, x:cubeSize/2, y:0, z:0, opacity:0.85})
-			  .set(boxes1[3], {rotationX:90, rotationY:0, x:0, y:-cubeSize/2, z:0, opacity:0.85})
-			  .set(boxes1[4], {rotationX:-90, rotationY:0, x:0, y:cubeSize/2, z:0, opacity:0.85})
-			  .set(boxes1[5], {rotationX:0, rotationY:180, x:0, y:0, z:-cubeSize/2, opacity:0.85})
-			  .set(trans3DBoxes1, {x:150, y:150, transformOrigin:"32px 32px 0px"});
+threeDTimeline.set(boxes1[0], {rotationX:0, rotationY:0, x:0, y:0, z:cubeSize/2, opacity:1})
+              .set(boxes1[1], {rotationX:0, rotationY:-90, x:-cubeSize/2, y:0, z:0, opacity:1})
+			  .set(boxes1[2], {rotationX:0, rotationY:90, x:cubeSize/2, y:0, z:0, opacity:1})
+			  .set(boxes1[3], {rotationX:90, rotationY:0, x:0, y:-cubeSize/2, z:0, opacity:1})
+			  .set(boxes1[4], {rotationX:-90, rotationY:0, x:0, y:cubeSize/2, z:0, opacity:1})
+			  .set(boxes1[5], {rotationX:0, rotationY:180, x:0, y:0, z:-cubeSize/2, opacity:1})
+			  .set(trans3DBoxes1, {x:150, y:150, transformOrigin:"25px 25px 0px"});
 // hover events
 
 $(trans3DDemo1).hover(over, out);
@@ -47,17 +47,17 @@ function over(){
 	//threeDTimeline.pause();
 }
 function out(){
-	TweenMax.to(trans3DDemo1, 0.15, {opacity:0.85});
+	TweenMax.to(trans3DDemo1, 0.15, {opacity:1});
 	//threeDTimeline.play();
 }
 
 
 //
-threeDTimeline.to(trans3DBoxes1, 15, {css:{rotationY:360, rotationX:-720, transformOrigin:"32px 32px 0px"}, ease:Power0.easeNone});
+threeDTimeline.to(trans3DBoxes1, 15, {css:{rotationY:360, rotationX:-720, transformOrigin:"25px 25px 0px"}, ease:Power0.easeNone});
 //
 function updateCube(){
-	stageW = ($(window).width())/2;
-	stageH = ($(window).height())/2;
+	stageW = ($(window).width())/70;
+	stageH = ($(window).height())/40;
 	stageX = (stageW-(trans3DBoxes1.width()/2));
 	stageY = (stageH-(cubeSize/2));
 	TweenMax.to(trans3DBoxes1, 1, {css:{x:stageX, y:stageY}});

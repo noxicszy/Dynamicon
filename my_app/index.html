@@ -3,21 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="css/win10style.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-	<link rel="import" href="file-manager.html">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>if (typeof module === 'object') { window.jQuery = window.$ = module.exports; };</script>
+	<script src="js/jquery.ripples.js"></script>
 	<link rel="stylesheet" href="css/cubeStyle.css">
-<style>
-	/* body {background-image: url(./images/background.png);} */
-</style>
+<!-- <style>
+	body {background-image: url(./images/background.png);}
+</style> -->
+
 
 
 </head>
 
 <body>
+	<div style="height: 100%">
 
-	<video id="background" src="videos/background2.mp4" autoplay="autoplay" loop="loop">
+
+	
+	<!-- <video id="background" src="videos/background2.mp4" autoplay="autoplay" loop="loop">
 		your browser does not support the video tag
-	</video>
+	</video> -->
 
 	<ul id="app">
 		<li>
@@ -51,16 +56,52 @@
 						<div></div>
 					</div>
 				</div>
+				<br /> 
+				<br /> TIM
 			</a>
 		</li>
 
 	</ul>
 
+	<!-- <img id="rplimg" src="images/girl.jpg" /> -->
+	<!-- <div id="ripple" style="background-image:url(./images/girl.jpg);width:600px;height:300px;">
+	</div> -->
 
+
+
+	</div>
 
 	<script src='js/TweenMax.min.js'></script>
 	<script type="text/javascript" src="js/cubeIndex.js"></script>
+	<!-- <script src="js/jquery-1.10.2.min.js"></script> -->
 
+	<script>
+		$(document).ready(function () {
+			try {
+				$('body').ripples({
+					resolution: 512,
+					dropRadius: 10, //px
+					perturbance: 0.02,
+				});
+			}
+			catch (e) {
+				$('.error').show().text(e);
+			}
+
+
+
+			// Automatic drops
+			setInterval(function () {
+				var $el = $('body');
+				var x = Math.random() * $el.outerWidth();
+				var y = Math.random() * $el.outerHeight();
+				var dropRadius = 10;
+				var strength = 0.02 + Math.random() * 0.02;
+
+				$el.ripples('drop', x, y, dropRadius, strength);
+			}, 800);
+		});
+	</script>
 </body>
 
 <script>
