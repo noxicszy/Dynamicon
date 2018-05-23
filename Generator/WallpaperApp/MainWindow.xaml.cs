@@ -58,6 +58,7 @@ namespace WallpaperApp
 
             //运行electron窗口
             string cmdstr = Path + "\\electron-v2.0.1-win32-x64\\electron.exe " + Path + "\\my_app";
+            //string cmdstr = "C:\\Users\\YongMao\\Desktop\\Dynamicon\\electron-v2.0.1-win32-x64\\electron.exe C:\\Users\\YongMao\\Desktop\\Dynamicon\\my_app";
             c.execute(cmdstr);
             IntPtr desktophandle = Win32.User32.GetDesktopWindow();
             IntPtr windowHandle2 = IntPtr.Zero;

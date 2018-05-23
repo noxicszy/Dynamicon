@@ -20,3 +20,7 @@ bin-release/
 *.rm
 *.wmv
 *.flv
+
+# Special files
+my_app/images/icons/
+my_app/iconList.txt
