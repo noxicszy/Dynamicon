@@ -93,6 +93,9 @@ namespace WallpaperApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
+            this.Hide();
+            //CommonUtils.CMD c = new CMD();
+            //c.execute("taskkill /im testWindow /f");
         }
 
         private void EndTask() {

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WallpaperApp"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="dynamicon" Loaded="Window_Loaded" Width="0" Height="0" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White" Icon="icon.ico">
+        Title="testWindow" Loaded="Window_Loaded" Width="0" Height="0" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White" Icon="icon.ico">
     <Grid>
         <Border BorderBrush="#CC119EDA" BorderThickness="1" HorizontalAlignment="Left" Height="272" Margin="0" VerticalAlignment="Top" Width="480" Background="Black" MouseDown="Border_MouseDown">
             <MediaElement x:Name="media" Margin="0" Width="480" Height="272" Volume="1" Source="" MouseDown="media_MouseDown" />
