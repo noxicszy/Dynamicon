@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,13 @@ namespace CommonUtils {
     public class fileExtractor {
 
         String path;
+        String WorkDirectory = System.IO.Directory.GetCurrentDirectory();
         StreamWriter sw = null;
         public fileExtractor() {
 
             try {
                 //创建输出流，将得到文件名子目录名保存到txt中
-                sw = new StreamWriter(new FileStream("iconList.txt", FileMode.Append));
+                sw = new StreamWriter(new FileStream("iconList.txt", FileMode.Open));
             }
             catch (IOException e) {
                 Console.WriteLine(e.Message);
@@ -38,7 +40,12 @@ namespace CommonUtils {
             path = path + "Desktop\\";
             DirectoryInfo rootEx = new DirectoryInfo(path);
             foreach (FileInfo f in rootEx.GetFiles()) {
+                Image img;
                 string filePath = path + f.Name;
+
+                img = System.Drawing.Icon.ExtractAssociatedIcon(filePath).ToBitmap();
+                img.Save(WorkDirectory + "\\my_app\\images\\" + f.Name + ".jpg");
+
                 if (f.Name.Contains("lnk")) {
                     IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(filePath);
                     sw.WriteLine(shortcut.TargetPath);

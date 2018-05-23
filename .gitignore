@@ -11,7 +11,7 @@ bin-release/
 *.ipa
 *.apk
 
-# Media
+# Medias
 *.mp4
 *.avi
 *.MOV
@@ -20,3 +20,6 @@ bin-release/
 *.rm
 *.wmv
 *.flv
+
+# Specific Files
+ iconList.txt
