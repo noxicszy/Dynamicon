@@ -11,7 +11,7 @@ bin-release/
 *.ipa
 *.apk
 
-# Media
+# Medias
 *.mp4
 *.avi
 *.MOV

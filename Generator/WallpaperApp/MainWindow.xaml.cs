@@ -60,9 +60,10 @@ namespace WallpaperApp
             string cmdstr = Path + "\\electron-v2.0.1-win32-x64\\electron.exe " + Path + "\\my_app";
             c.execute(cmdstr);
             IntPtr desktophandle = Win32.User32.GetDesktopWindow();
-            IntPtr windowHandle2 = (IntPtr)0;
+            IntPtr windowHandle2 = IntPtr.Zero;
             //抓取electron窗口句柄
-            while (windowHandle2 == (IntPtr)0)
+            System.Threading.Thread.Sleep(1000);
+            while (windowHandle2 == IntPtr.Zero)
                 windowHandle2 = Win32.User32.FindWindow(null, "dynamicon");
 
             //抓取桌面层句柄
@@ -86,13 +87,14 @@ namespace WallpaperApp
             Win32.User32.SetWindowPos(windowHandle2, IntPtr.Zero, 0, 0, w, h, TOPMOST_FLAGS);
 
             InitializeComponent();
-            media.UnloadedBehavior = MediaState.Manual;
+            //media.UnloadedBehavior = MediaState.Manual;
             AddTrayIcon();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
+            this.Hide();
         }
 
         private void EndTask() {
@@ -120,19 +122,31 @@ namespace WallpaperApp
 
             ContextMenu menu = new ContextMenu();
 
-            MenuItem closeItem = new MenuItem();
-            closeItem.Text = "资源管理器";
-            closeItem.Click += new EventHandler(delegate
+            MenuItem closeItem4= new MenuItem();
+            closeItem4.Text = "主界面";
+            closeItem4.Click += new EventHandler(delegate
             {
-                CommonUtils.CMD c = new CMD();
-                c.execute("explorer.exe");
-                //EndTask();
-                //Environment.Exit(0);
+                this.Show();
+            });
+
+            MenuItem closeItem3 = new MenuItem();
+            closeItem3.Text = "设置";
+            closeItem3.Click += new EventHandler(delegate
+            {
+                //function
             });
 
             MenuItem closeItem2 = new MenuItem();
-            closeItem2.Text = "退出";
+            closeItem2.Text = "资源管理器";
             closeItem2.Click += new EventHandler(delegate
+            {
+                CommonUtils.CMD c = new CMD();
+                c.execute("explorer.exe");
+            });
+
+            MenuItem closeItem = new MenuItem();
+            closeItem.Text = "退出";
+            closeItem.Click += new EventHandler(delegate
             {
                 CommonUtils.CMD c = new CMD();
                 c.execute("taskkill /im electron.exe /f");
@@ -141,8 +155,10 @@ namespace WallpaperApp
                 Environment.Exit(0);
             });
 
-            menu.MenuItems.Add(closeItem);
+            menu.MenuItems.Add(closeItem4);
+            menu.MenuItems.Add(closeItem3);
             menu.MenuItems.Add(closeItem2);
+            menu.MenuItems.Add(closeItem);
             trayIcon.ContextMenu = menu;    //设置NotifyIcon的右键弹出菜单
         }
 
@@ -152,15 +168,12 @@ namespace WallpaperApp
         }
 
 
-        //---------------------------------------------------------------------
-
         
         //-------------------------- 事件处理 -----------------------------
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //if (currentAudioPath != null)
-            //    fullWindow.ChangeSource(new Uri(currentAudioPath));
+            //function
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -171,14 +184,19 @@ namespace WallpaperApp
 
 
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Exit_click(object sender, RoutedEventArgs e)
         {
-
+            CommonUtils.CMD c = new CMD();
+            c.execute("taskkill /im electron.exe /f");
+            System.Threading.Thread.Sleep(2000);
+            EndTask();
+            Environment.Exit(0);
         }
 
-        private void media_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Setting_click(object sender, RoutedEventArgs e)
         {
+            //function
         }
-        //---------------------------------------------------------------------
+
     }
 }
