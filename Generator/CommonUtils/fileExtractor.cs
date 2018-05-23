@@ -17,20 +17,39 @@ namespace CommonUtils {
         StreamWriter sw = null;
         public fileExtractor() {
 
-            try {
+            try
+            {
+                FileStream fs;
                 //创建输出流，将得到文件名子目录名保存到txt中
-                sw = new StreamWriter(new FileStream("iconList.txt", FileMode.Open));
+                //判断文件是否存在,不存在则新建
+                if (!System.IO.File.Exists("my_app\\iconList.txt"))
+                {
+                    fs = new FileStream("my_app\\iconList.txt", FileMode.CreateNew);
+                    sw = new StreamWriter(fs);
+                }
+                else
+                    sw = new StreamWriter(new FileStream("my_app\\iconList.txt", FileMode.Open));
             }
-            catch (IOException e) {
+            catch (IOException e)
+            {
                 Console.WriteLine(e.Message);
+                Console.WriteLine("##############");
             }
         }
 
         IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
 
         public void getDesktopFile() {
+
+            //判断文件夹是否存在,不存在则新建
+            if (!System.IO.Directory.Exists(WorkDirectory + "\\my_app\\images\\icons"))
+            {
+                DirectoryInfo dir = new DirectoryInfo(WorkDirectory + "\\my_app\\images\\icons");
+                dir.Create();
+            }
+
             //获取桌面图标
-            String path = "C:\\Users\\";
+            path = "C:\\Users\\";
             DirectoryInfo root = new DirectoryInfo(path);
             foreach (DirectoryInfo d in root.GetDirectories()) {
                 if (d.Name == "All Users" || d.Name == "Public" || d.Name == "Default User" || d.Name == "Default" || d.Name == "defaultuser0") continue;
@@ -39,18 +58,41 @@ namespace CommonUtils {
             }
             path = path + "Desktop\\";
             DirectoryInfo rootEx = new DirectoryInfo(path);
+            //遍历桌面文件
             foreach (FileInfo f in rootEx.GetFiles()) {
                 Image img;
                 string filePath = path + f.Name;
 
                 img = System.Drawing.Icon.ExtractAssociatedIcon(filePath).ToBitmap();
-                img.Save(WorkDirectory + "\\my_app\\images\\" + f.Name + ".jpg");
-
-                if (f.Name.Contains("lnk")) {
-                    IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(filePath);
-                    sw.WriteLine(shortcut.TargetPath);
+                //提取图片
+                try
+                {
+                    img.Save(WorkDirectory + "\\my_app\\images\\icons\\" + f.Name + ".jpg");
                 }
-                else sw.WriteLine(filePath);
+                catch (Exception)
+                {
+                    Console.WriteLine("image saving error!");
+                }
+                //写入文件信息:文件名\t桌面路径\t实际路径
+                try
+                {
+                    //文件名
+                    sw.Write(f.Name + '\t');
+                    //桌面路径
+                    sw.Write(filePath + '\t');
+                    //实际路径(对于非快捷方式,路径同桌面路径)
+                    if (f.Name.Contains("lnk"))
+                    {
+                        IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(filePath);
+                        sw.WriteLine(shortcut.TargetPath);
+                    }
+                    else sw.WriteLine(filePath);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("link saving error!");
+                }
+                
             }
             if (sw != null) sw.Close();
         }
