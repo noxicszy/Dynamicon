@@ -1,0 +1,22 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Media
+*.mp4
+*.avi
+*.MOV
+*.rmvb
+*.mkv
+*.rm
+*.wmv
+*.flv
