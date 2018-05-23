@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:WallpaperApp"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="testWindow" Loaded="Window_Loaded" Width="0" Height="0" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White" Icon="icon.ico">
+        Title="Dynamicon" Loaded="Window_Loaded" Width="480" Height="200" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White">
     <Grid>
-        <Border BorderBrush="#CC119EDA" BorderThickness="1" HorizontalAlignment="Left" Height="272" Margin="0" VerticalAlignment="Top" Width="480" Background="Black" MouseDown="Border_MouseDown">
+        <!--<Border BorderBrush="#CC119EDA" BorderThickness="1" HorizontalAlignment="Left" Height="272" Margin="0" VerticalAlignment="Top" Width="480" Background="Black" MouseDown="Border_MouseDown">
             <MediaElement x:Name="media" Margin="0" Width="480" Height="272" Volume="1" Source="" MouseDown="media_MouseDown" />
-        </Border>
-        <GroupBox Header="设置" HorizontalAlignment="Left" Height="172" Margin="0,272,-6,0" VerticalAlignment="Top" Width="480">
+        </Border>-->
+        <GroupBox Header="主界面" HorizontalAlignment="Left" Height="172" Margin="0,0,0,0" VerticalAlignment="Top" Width="480">
             <Grid>
+                <Button Margin="340, 80, 60, 20" Content="退出" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Exit_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
+                <Button Margin="240, 80, 160, 20" Content="设置" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Setting_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
+
                 <!--<ToggleButton x:Name="btnFull" Margin="96,10,332,99" Foreground="#FF16DCF0" BorderBrush="#FFA8A8A8" Background="#CC119EDA" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="40" Checked="btnFull_Checked" Unchecked="btnFull_Unchecked" RenderTransformOrigin="0.6,-0.76" IsChecked="True"/>
                 <Button Margin="369,94,10,10" Content="设为壁纸" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Button_Click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
                 <Label Content="壁纸" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81" Height="25"/>
