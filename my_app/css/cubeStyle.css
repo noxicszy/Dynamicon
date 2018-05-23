@@ -1,0 +1,25 @@
+
+
+#trans3DDemo1 {
+	position:relative;
+	display:inline-block;
+	width:64px;
+	height:64px;
+	/*top:250px;
+	margin:0px auto 0px auto;*/
+}
+
+#trans3DBoxes1 div {
+	position:absolute;
+	width:64px;
+	height:64px;
+	padding:0;
+	margin:0;
+	background:url(Typora.png);
+	background-size: 64px 64px;
+	border:solid 2px #FFF;
+	/* display:block; */
+	text-align:center;
+	font-size:36px;
+	font-weight:bold;
+}

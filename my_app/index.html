@@ -2,10 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link href="win10style.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+	<link href="css/win10style.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<link rel="import" href="file-manager.html">
-
+	<link rel="stylesheet" href="css/cubeStyle.css">
 <style>
 	/* body {background-image: url(./images/background.png);} */
 </style>
@@ -22,16 +22,16 @@
 	<ul id="app">
 		<li>
 			<a href="#" id="Computer">
-				<img src="images/Computer.ico">
+				<img src="images/MyComputer.gif">
 				<br /> Computer
 			</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a href="#" id="Typora">
-				<img src="images/Typora.png">
+				<img src="images/Typora.gif">
 				<br /> Typora
 			</a>
-		</li>
+		</li> -->
 		<li>
 			<a href="#" id="TIM">
 				<img src="images/TIM.gif">
@@ -39,13 +39,32 @@
 			</a>
 		</li>
 
+		<li>
+			<a href="#" id="Typora">
+				<div id="trans3DDemo1">
+					<div id="trans3DBoxes1">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</a>
+		</li>
 
 	</ul>
+
+
+
+	<script src='js/TweenMax.min.js'></script>
+	<script type="text/javascript" src="js/cubeIndex.js"></script>
 
 </body>
 
 <script>
-	require('./file-manager.js');
+	require('js/file-manager.js');
 </script>
 
 </html>

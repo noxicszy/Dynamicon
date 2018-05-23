@@ -52,41 +52,6 @@ img
     background: url(images/taskbarbg.png) no-repeat;
 }
 
-#taskbar img
-{
-    margin: 5px 0 0 0;
-    width: 30px;
-    height: 29px;
-}
-
-#taskbar a
-{
-    position: absolute;
-    text-align: center;
-    width: 57px;
-    height: 46px;
-    background: url(images/taskbarhover.png) 0 -46px no-repeat;
-}
-
-#taskbar a:hover
-{
-    background-position: 0 -3px;
-}
-
-#taskbar #start
-{
-    position: absolute;
-    text-align: center;
-    width: 57px;
-    height: 46px;
-    background: url(images/start.bmp) 0 -6px no-repeat;
-}
-
-#taskbar #start:hover
-{
-    text-decoration: none;
-    background-position: 0 -114px;
-}
 
 #desktop
 {
