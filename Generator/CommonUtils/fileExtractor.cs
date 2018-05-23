@@ -21,6 +21,7 @@ namespace CommonUtils {
             {
                 FileStream fs;
                 //创建输出流，将得到文件名子目录名保存到txt中
+                //判断文件是否存在,不存在则新建
                 if (!System.IO.File.Exists("my_app\\iconList.txt"))
                 {
                     fs = new FileStream("my_app\\iconList.txt", FileMode.CreateNew);
@@ -39,6 +40,14 @@ namespace CommonUtils {
         IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
 
         public void getDesktopFile() {
+
+            //判断文件夹是否存在,不存在则新建
+            if (!System.IO.Directory.Exists(WorkDirectory + "\\my_app\\images\\icons"))
+            {
+                DirectoryInfo dir = new DirectoryInfo(WorkDirectory + "\\my_app\\images\\icons");
+                dir.Create();
+            }
+
             //获取桌面图标
             path = "C:\\Users\\";
             DirectoryInfo root = new DirectoryInfo(path);
