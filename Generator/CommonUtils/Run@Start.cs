@@ -21,7 +21,7 @@ namespace CommonUtils
             RegistryKey Run = HKCU.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
             try
             {
-                Run.SetValue("WallpaperApp.exe", localPath);
+                Run.SetValue("WallpaperApp.exe", localPath + "\\WallpaperApp.exe");
                 Run.Close();
                 HKCU.Close();
                 return true;
