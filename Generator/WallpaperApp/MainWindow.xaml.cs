@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.InteropServices;
 using MahApps.Metro.Controls;
 using WinWallpaper.Utils;
 using CommonUtils;
@@ -95,6 +96,10 @@ namespace WallpaperApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
+
+
+
+
             this.Hide();
         }
 

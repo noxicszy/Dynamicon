@@ -71,3 +71,11 @@ C:\Users\YongMao\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUti
 C:\Users\YongMao\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
 C:\Users\YongMao\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.dll
 C:\Users\YongMao\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\bin\Debug\CommonUtils.dll
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\bin\Debug\CommonUtils.pdb
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.csprojResolveAssemblyReference.cache
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.ResolveComReference.cache
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.csproj.CoreCompileInputs.cache
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.dll
+C:\Users\yyyuy\Desktop\Dynamicon-app\Generator\CommonUtils\obj\Debug\CommonUtils.pdb
