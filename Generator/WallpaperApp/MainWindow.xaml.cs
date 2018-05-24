@@ -5,10 +5,10 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Navigation;
@@ -28,10 +28,12 @@ namespace WallpaperApp
     public partial class MainWindow : MetroWindow
     {
         private CommonUtils.CMD c = new CMD();
-        
+        CommonUtils.Run_Start p = new Run_Start();
         private CommonUtils.fileExtractor e = new fileExtractor();
         private static NotifyIcon trayIcon;
+        private static NotifyIcon trayIconForNotice;
         private Icon ico = new System.Drawing.Icon("icon.ico");
+        private static string Path = System.IO.Directory.GetCurrentDirectory();
         //uflags常数
         const UInt32 SWP_NOSIZE = 0x0001;
         const UInt32 SWP_NOMOVE = 0x0002;
@@ -53,7 +55,7 @@ namespace WallpaperApp
             int h = rect.Height; //高（像素）
             int w = rect.Width; //宽（像素）
             //提取桌面文件
-            string Path = System.IO.Directory.GetCurrentDirectory();
+            
             Console.WriteLine(Path);
             e.getDesktopFile();
 
@@ -87,17 +89,15 @@ namespace WallpaperApp
             Win32.User32.SetParent(windowHandle2, desktopHandle);
             //桌面层置顶
             Win32.User32.SetWindowPos(windowHandle2, IntPtr.Zero, 0, 0, w, h, TOPMOST_FLAGS);
-
             InitializeComponent();
-            //media.UnloadedBehavior = MediaState.Manual;
-            AddTrayIcon();
+            //AddTrayIcon();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
-
-            this.Hide();
+            AddTrayIconForNotice();
+            this.Show();
         }
 
         private void EndTask() {
@@ -106,6 +106,12 @@ namespace WallpaperApp
                 trayIcon.Visible = false;
                 trayIcon.Dispose();
                 trayIcon = null;
+            }
+            if (trayIconForNotice != null)
+            {
+                trayIconForNotice.Visible = false;
+                trayIconForNotice.Dispose();
+                trayIconForNotice = null;
             }
         }
 
@@ -163,7 +169,21 @@ namespace WallpaperApp
             menu.MenuItems.Add(closeItem3);
             menu.MenuItems.Add(closeItem2);
             menu.MenuItems.Add(closeItem);
-            trayIcon.ContextMenu = menu;    //设置NotifyIcon的右键弹出菜单
+            trayIcon.ContextMenu = menu;//设置NotifyIcon的右键弹出菜单
+        }
+
+        private void AddTrayIconForNotice()
+        {
+            if (trayIconForNotice != null)
+            {
+                return;
+            }
+            trayIconForNotice = new NotifyIcon
+            {
+                Icon = Properties.Resources.icon,
+                Text = "Dynamicon"
+            };
+            trayIconForNotice.Visible = false;
         }
 
         private void TrayIcon_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -201,6 +221,26 @@ namespace WallpaperApp
         private void Setting_click(object sender, RoutedEventArgs e)
         {
             //function
+        }
+
+        private void btnFull_Checked(object sender, RoutedEventArgs e)
+        {
+
+            //System.Threading.Thread.Sleep(2000);
+            bool success = p.AutoRunAfterStart(Path);
+            if (trayIconForNotice == null) AddTrayIconForNotice();
+            if (success) trayIconForNotice.ShowBalloonTip(5000, "提示", "已设置为开机自启动！", ToolTipIcon.Info);
+            else trayIconForNotice.ShowBalloonTip(5000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
+
+        }
+
+        private void btnFull_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //System.Threading.Thread.Sleep(2000);
+            bool success = p.DeleteSubKey();
+            if (trayIconForNotice == null) AddTrayIconForNotice();
+            if (success) trayIconForNotice.ShowBalloonTip(5000, "提示", "已取消开机自启动！", ToolTipIcon.Info);
+            else trayIconForNotice.ShowBalloonTip(5000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
         }
 
     }

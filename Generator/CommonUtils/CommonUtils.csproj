@@ -50,6 +50,7 @@
     <Compile Include="dwmapi.cs" />
     <Compile Include="fileExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Run%40Start.cs" />
     <Compile Include="Win32.cs" />
   </ItemGroup>
   <ItemGroup>
