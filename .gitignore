@@ -24,3 +24,4 @@ bin-release/
 # Special files
 my_app/images/icons/
 my_app/iconList.txt
+Generator/.vs
