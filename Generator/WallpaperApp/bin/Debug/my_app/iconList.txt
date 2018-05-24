@@ -1,3 +1,3 @@
-desktop.ini	C:\Users\yyyuy\Desktop\desktop.ini	C:\Users\yyyuy\Desktop\desktop.ini
-New Text Document.txt	C:\Users\yyyuy\Desktop\New Text Document.txt	C:\Users\yyyuy\Desktop\New Text Document.txt
-Steam.exe - Shortcut.lnk	C:\Users\yyyuy\Desktop\Steam.exe - Shortcut.lnk	C:\Program Files (x86)\Steam\Steam.exe
+201505031546.zip	C:\Users\YongMao\Desktop\201505031546.zip	C:\Users\YongMao\Desktop\201505031546.zip
+desktop.ini	C:\Users\YongMao\Desktop\desktop.ini	C:\Users\YongMao\Desktop\desktop.ini
+新建压缩(zipped)文件夹.zip	C:\Users\YongMao\Desktop\新建压缩(zipped)文件夹.zip	C:\Users\YongMao\Desktop\新建压缩(zipped)文件夹.zip

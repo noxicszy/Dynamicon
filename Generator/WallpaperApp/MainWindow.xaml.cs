@@ -97,9 +97,6 @@ namespace WallpaperApp
         {
             AddTrayIcon();
 
-
-
-
             this.Hide();
         }
 
@@ -123,6 +120,7 @@ namespace WallpaperApp
                 Text = "Dynamicon"
             };
             trayIcon.Visible = true;
+            trayIcon.ShowBalloonTip(5000, "提示", "Dynamicon开始运行！", ToolTipIcon.Info);
 
             trayIcon.MouseClick += TrayIcon_MouseClick;
 
@@ -186,6 +184,7 @@ namespace WallpaperApp
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
+            trayIcon.ShowBalloonTip(5000, "提示", "Dynamicon已最小化！", ToolTipIcon.Info);
         }
 
 
