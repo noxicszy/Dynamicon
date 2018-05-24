@@ -14,7 +14,7 @@ var trans3DDemo1 = $("#trans3DDemo1"),
     trans3DBoxes1 = $("#trans3DBoxes1"),// div containing all the the boxes
     boxes1 = $("#trans3DBoxes1 div"), // all the boxes
     threeDTimeline = new TimelineMax({onUpdate:updateCube, repeat:-1}),
-	stageW = ($(window).width()) / 70;
+	stageW = ($(window).width()) / 40;
 	stageH = ($(window).height()) / 40;
 	stageX = (stageW-(trans3DBoxes1.width()/2)),
 	stageY = (stageH-(cubeSize/2));
@@ -56,7 +56,7 @@ function out(){
 threeDTimeline.to(trans3DBoxes1, 15, {css:{rotationY:360, rotationX:-720, transformOrigin:"25px 25px 0px"}, ease:Power0.easeNone});
 //
 function updateCube(){
-	stageW = ($(window).width())/70;
+	stageW = ($(window).width())/40;
 	stageH = ($(window).height())/40;
 	stageX = (stageW-(trans3DBoxes1.width()/2));
 	stageY = (stageH-(cubeSize/2));

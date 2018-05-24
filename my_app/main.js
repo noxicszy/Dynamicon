@@ -26,7 +26,7 @@ function createWindow() {
     }))
 
     ifTest = true;
-    // ifTest = false;
+    ifTest = false;
     if(!ifTest)
         win.maximize();
     else
