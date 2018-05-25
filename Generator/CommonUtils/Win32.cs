@@ -15,6 +15,19 @@ namespace WinWallpaper.Utils
 
         public class User32
         {
+
+            /// <summary>
+            /// 键盘事件
+            /// </summary>
+            /// <param name="bvk"></param>
+            /// <param name="bScan"></param>
+            /// <param name="dwFlags"> 0 为按下，2为释放</param>
+            /// <param name="dwExtraInfo">一般情况下设成为 0</param>
+            [DllImport("user32.dll")]
+            public extern static void keybd_event(byte bvk, byte bScan, int dwFlags, int dwExtraInfo);
+            //调用
+
+
             /// <summary>
             ///  查找顶级窗口句柄
             /// </summary>

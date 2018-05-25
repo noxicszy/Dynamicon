@@ -90,7 +90,17 @@ namespace WallpaperApp
             //桌面层置顶
             Win32.User32.SetWindowPos(windowHandle2, IntPtr.Zero, 0, 0, w, h, TOPMOST_FLAGS);
             InitializeComponent();
-            //AddTrayIcon();
+            Win32.User32.keybd_event((byte)Keys.LWin, 0, 0, 0);//按下LWIN
+            Win32.User32.keybd_event((byte)Keys.Tab, 0, 0, 0);//按下tab
+            Win32.User32.keybd_event((byte)Keys.LWin, 0, 2, 0);//释放LWIN
+            Win32.User32.keybd_event((byte)Keys.Tab, 0, 2, 0);//释放tab
+            Win32.User32.keybd_event((byte)Keys.LWin, 0, 0, 0);//按下LWIN
+            Win32.User32.keybd_event((byte)Keys.Tab, 0, 0, 0);//按下tab
+            Win32.User32.keybd_event((byte)Keys.LWin, 0, 2, 0);//释放LWIN
+            Win32.User32.keybd_event((byte)Keys.Tab, 0, 2, 0);//释放tab
+            //Win32.User32.keybd_event((byte)Keys.Escape, 0, 0, 0);//按下Esc
+            //Win32.User32.keybd_event((byte)Keys.Escape, 0, 2, 0);//释放Esc
+            //SendKeys.SendWait("{ESC}");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
