@@ -1,3 +1,11 @@
 desktop.ini	C:\Users\YongMao\Desktop\desktop.ini	C:\Users\YongMao\Desktop\desktop.ini
 新建压缩(zipped)文件夹.zip	C:\Users\YongMao\Desktop\新建压缩(zipped)文件夹.zip	C:\Users\YongMao\Desktop\新建压缩(zipped)文件夹.zip
+��件夹.zip
 Desktop\新建压缩(zipped)文件夹.zip	C:\Users\YongMao\Desktop\新建压缩(zipped)文件夹.zip
+=======
+1235(2).exe	C:\Users\yyyuy\Desktop\1235(2).exe	C:\Users\yyyuy\Desktop\1235(2).exe
+desktop.ini	C:\Users\yyyuy\Desktop\desktop.ini	C:\Users\yyyuy\Desktop\desktop.ini
+Gif.Components.zip	C:\Users\yyyuy\Desktop\Gif.Components.zip	C:\Users\yyyuy\Desktop\Gif.Components.zip
+New Text Document.txt	C:\Users\yyyuy\Desktop\New Text Document.txt	C:\Users\yyyuy\Desktop\New Text Document.txt
+Steam.exe - Shortcut.lnk	C:\Users\yyyuy\Desktop\Steam.exe - Shortcut.lnk	C:\Program Files (x86)\Steam\Steam.exe
+>>>>>>> d60a2cbd89d24fe65ae7ad0f1880912d76f8f6df

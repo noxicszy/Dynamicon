@@ -31,7 +31,6 @@ namespace WallpaperApp
         CommonUtils.Run_Start p = new Run_Start();
         private CommonUtils.fileExtractor e = new fileExtractor();
         private static NotifyIcon trayIcon;
-        private static NotifyIcon trayIconForNotice;
         private Icon ico = new System.Drawing.Icon("icon.ico");
         private static string Path = System.IO.Directory.GetCurrentDirectory();
         //uflags常数
@@ -106,7 +105,6 @@ namespace WallpaperApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
-            AddTrayIconForNotice();
             this.Show();
         }
 
@@ -116,12 +114,6 @@ namespace WallpaperApp
                 trayIcon.Visible = false;
                 trayIcon.Dispose();
                 trayIcon = null;
-            }
-            if (trayIconForNotice != null)
-            {
-                trayIconForNotice.Visible = false;
-                trayIconForNotice.Dispose();
-                trayIconForNotice = null;
             }
         }
 
@@ -136,7 +128,7 @@ namespace WallpaperApp
                 Text = "Dynamicon"
             };
             trayIcon.Visible = true;
-            trayIcon.ShowBalloonTip(5000, "提示", "Dynamicon开始运行！", ToolTipIcon.Info);
+            trayIcon.ShowBalloonTip(2000, "提示", "Dynamicon开始运行！", ToolTipIcon.Info);
 
             trayIcon.MouseClick += TrayIcon_MouseClick;
 
@@ -182,19 +174,6 @@ namespace WallpaperApp
             trayIcon.ContextMenu = menu;//设置NotifyIcon的右键弹出菜单
         }
 
-        private void AddTrayIconForNotice()
-        {
-            if (trayIconForNotice != null)
-            {
-                return;
-            }
-            trayIconForNotice = new NotifyIcon
-            {
-                Icon = Properties.Resources.icon,
-                Text = "Dynamicon"
-            };
-            trayIconForNotice.Visible = false;
-        }
 
         private void TrayIcon_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -214,7 +193,7 @@ namespace WallpaperApp
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
-            trayIcon.ShowBalloonTip(5000, "提示", "Dynamicon已最小化！", ToolTipIcon.Info);
+            trayIcon.ShowBalloonTip(2000, "提示", "Dynamicon已最小化！", ToolTipIcon.Info);
         }
 
 
@@ -238,9 +217,14 @@ namespace WallpaperApp
 
             //System.Threading.Thread.Sleep(2000);
             bool success = p.AutoRunAfterStart(Path);
-            if (trayIconForNotice == null) AddTrayIconForNotice();
-            if (success) trayIconForNotice.ShowBalloonTip(5000, "提示", "已设置为开机自启动！", ToolTipIcon.Info);
-            else trayIconForNotice.ShowBalloonTip(5000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
+            Console.WriteLine(success);
+            //System.Windows.Forms.MessageBox.Show("abc");
+            if (success)
+            {
+                trayIcon.ShowBalloonTip(1000, "提示", "已设置为开机自启动！", ToolTipIcon.Info);
+                //System.Windows.Forms.MessageBox.Show("已设置为开机自启动！");
+            }
+            else trayIcon.ShowBalloonTip(1000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
 
         }
 
@@ -248,9 +232,14 @@ namespace WallpaperApp
         {
             //System.Threading.Thread.Sleep(2000);
             bool success = p.DeleteSubKey();
-            if (trayIconForNotice == null) AddTrayIconForNotice();
-            if (success) trayIconForNotice.ShowBalloonTip(5000, "提示", "已取消开机自启动！", ToolTipIcon.Info);
-            else trayIconForNotice.ShowBalloonTip(5000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
+            Console.WriteLine(success);
+            //System.Windows.Forms.MessageBox.Show("abc");
+            if (success)
+            {
+                trayIcon.ShowBalloonTip(1000, "提示", "已取消开机自启动！", ToolTipIcon.Info);
+                //System.Windows.Forms.MessageBox.Show("已取消开机自启动！");
+            }
+            else trayIcon.ShowBalloonTip(1000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
         }
 
     }
