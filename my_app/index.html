@@ -9,9 +9,6 @@
 	<link rel="stylesheet" href="css/cubeStyle.css">
 	<link rel="stylesheet" href="css/dominoStyle.css">
 	<script src="js/prefixfree.min.js"></script>
-<!-- <style>
-	body {background-image: url(./images/background.png);}
-</style> -->
 
 
 
@@ -20,12 +17,6 @@
 <body>
 	<div style="height: 100%">
 
-
-	
-	<video id="background" src="videos/background2.mp4" autoplay="autoplay" loop="loop">
-		your browser does not support the video tag
-	</video>
-
 	<ul id="app">
 		<li>
 			<a href="#" id="Computer">
@@ -33,12 +24,7 @@
 				<br /> Computer
 			</a>
 		</li>
-		<!-- <li>
-			<a href="#" id="Typora">
-				<img src="images/Typora.gif">
-				<br /> Typora
-			</a>
-		</li> -->
+
 		<li>
 			<a href="#" id="TIM">
 				<img src="images/TIM.gif">
@@ -46,7 +32,7 @@
 			</a>
 		</li>
 
-		<li>
+		<!-- <li>
 			<a href="#" id="Typora">
 				<div id="trans3DDemo1">
 					<div id="trans3DBoxes1">
@@ -61,9 +47,9 @@
 				<br /> 
 				<br /> Typora
 			</a>
-		</li>
+		</li> -->
+		
 		<li>
-				
 			<a href="#" id="Edge">
 			<div onclick="">
 				<figure>
@@ -71,14 +57,9 @@
 				</figure>
 			</div>
 			</a>
-		</li>
+		</li> 
 		
 	</ul>
-
-	<!-- <img id="rplimg" src="images/girl.jpg" /> -->
-	<!-- <div id="ripple" style="background-image:url(./images/girl.jpg);width:600px;height:300px;">
-	</div> -->
-
 
 
 	</div>
@@ -87,37 +68,10 @@
 	<script type="text/javascript" src="js/cubeIndex.js"></script>
 	
 
-	<script>
-		$(document).ready(function () {
-			try {
-				$('body').ripples({
-					resolution: 512,
-					dropRadius: 10, //px
-					perturbance: 0.02,
-				});
-			}
-			catch (e) {
-				$('.error').show().text(e);
-			}
-
-
-
-			// Automatic drops
-			setInterval(function () {
-				var $el = $('body');
-				var x = Math.random() * $el.outerWidth();
-				var y = Math.random() * $el.outerHeight();
-				var dropRadius = 10;
-				var strength = 0.02 + Math.random() * 0.02;
-
-				$el.ripples('drop', x, y, dropRadius, strength);
-			}, 800);
-		});
-	</script>
 </body>
 
-<script>
-	require('./js/file-manager.js');
-</script>
 
+<script>require('./js/file-manager.js');</script>
+<script src="js/background.js"></script>
 </html>
+
