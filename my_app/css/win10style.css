@@ -20,10 +20,19 @@ img
 
 #app
 {
-    float: left;
+    /* float: left; */
     text-align: center;
-    margin: -15px 0 0 -30px;
+    margin: 0px 0 0 0px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 100%;
+    /* align-items: flex-start; */
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    
 }
 
 #app a
@@ -31,8 +40,8 @@ img
     text-decoration: none;
     border: solid 1px transparent;
     display: block;
-    padding: 3px;
-    margin: 20px 0 0 0;
+    padding: 1px;
+    margin: 10px 0 0 0;
     color: #ffffff;
     text-shadow: 0.2em 0.1em 0.3em #000000;
 }
@@ -49,15 +58,24 @@ img
 
 #app img
 {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
 }
 
-#app div
+/* #app div
 {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+} */
+
+#app .icon {
+    width : 75px;
+    height: 85px;
+    float:left;
+    /* display: inline-block; */
 }
+
+
 
 #background {    
     position:fixed;    
@@ -71,8 +89,4 @@ img
     -webkit-transform: translateX(-50%) translateY(-50%);   
      z-index: -100;
     
-}
-
-#app li {
-    width : 75px;
 }

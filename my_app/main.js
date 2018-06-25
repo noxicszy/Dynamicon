@@ -31,8 +31,6 @@ function createWindow() {
         win.maximize();
     else
         win.webContents.openDevTools()
-    
-
     // 
     // 当 window 被关闭，这个事件会被触发。
     win.on('closed', () => {

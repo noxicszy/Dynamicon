@@ -1,11 +1,3 @@
-{/* <li>
-    <a href="#" id="TIM">
-        <img src="images/icons/VR Kanojo.url.jpg">
-            <br /> TIM
-    </a>
-</li> 
- */}
-
 String.prototype.format = function (args) {
     var result = this;
     if (arguments.length < 1) {
@@ -32,8 +24,8 @@ fs.readFile('my_app/iconList.txt', function (err, data) {
     }
     iconList = data.toString().split('\n');
     iconList.forEach(element => {
-        var li = displayOneIcon(element);
-        appUl.appendChild(li);
+        var div = displayOneIcon(element);
+        appUl.appendChild(div);
     });
 
 });
@@ -41,22 +33,16 @@ fs.readFile('my_app/iconList.txt', function (err, data) {
 
 
 function displayOneIcon(IconStr) {
-    var li = document.createElement("li");
+    var div = document.createElement("div");
+    div.className = "icon";
     var arr = IconStr.split('\t');
 
     var htmlStr ='<a href = "#" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
     htmlStr = htmlStr.format({ 'a': arr[0], 'b': arr[0], 'c': arr[0]});
-    // var htmlStr = '<a href="http://www.sucaijiayuan.com" target="_blank">www.sucaijiayuan.com";</a>';
-    li.innerHTML = htmlStr;
-    return li;
+    
+    div.innerHTML = htmlStr;
+    return div;
     
 }
 
 
-// function displayOneIcon(IconStr) {
-//     var li = document.createElement("li");
-//     var a = document.createElement("a");
-//     var arr = IconStr.split('\t');
-//     a.href = "#";
-//     a.id = arr[0];
-// }
