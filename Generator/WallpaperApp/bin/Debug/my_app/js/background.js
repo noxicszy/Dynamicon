@@ -12,7 +12,7 @@ if(mode=="image"){
 else if(mode=="video"){
     background = document.createElement("video");
     background.id = "background";
-    background.src = "D:/Program Files/OneDrive - 星空/Some Sundry/programData/Spy Rion gets Captured and Fucked Hardcore.MP4";
+    background.src = "videos/background2.mp4";
     background.autoplay = "autoplay"
     background.loop = "loop";
 }

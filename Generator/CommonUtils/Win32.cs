@@ -37,6 +37,8 @@ namespace WinWallpaper.Utils
             [DllImport("user32.dll")]
             public static extern IntPtr FindWindow(string className, string titleName);
 
+            [DllImport("user32.dll")]
+            public static extern void SwitchToThisWindow(IntPtr hWnd, bool fAltTab);
 
             /// <summary>
             ///    查找子窗口句柄

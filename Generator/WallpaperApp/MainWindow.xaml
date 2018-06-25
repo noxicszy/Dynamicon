@@ -14,10 +14,11 @@
         <GroupBox Header="主界面" HorizontalAlignment="Left" Height="172" Margin="0,0,0,0" VerticalAlignment="Top" Width="480">
             <Grid>
                 <Button Margin="340, 80, 60, 20" Content="退出" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Exit_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
-                <Button Margin="240, 80, 160, 20" Content="设置" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Setting_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
+                <Button Margin="240, 80, 160, 20" Content="选择文件" FontFamily="Microsoft YaHei UI" FontSize="12" Click="File_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
 
                 <ToggleButton x:Name="btnFull" Margin="96,10,332,99" Foreground="#FF16DCF0" BorderBrush="#FFA8A8A8" Background="#CC119EDA" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="40" Checked="btnFull_Checked" Unchecked="btnFull_Unchecked" RenderTransformOrigin="0.6,-0.76" IsChecked="false"/>
                 <Label Content="开机启动" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81" Height="25"/>
+                <!--<Button Margin="240, 80, 160, 20" Content="设置" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Setting_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />-->
                 <!--<Slider HorizontalAlignment="Left" Margin="96,67,0,0" VerticalAlignment="Top" Width="80" Height="20" Value="80"/>-->
                 
             </Grid>

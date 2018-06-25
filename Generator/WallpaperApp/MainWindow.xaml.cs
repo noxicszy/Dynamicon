@@ -46,6 +46,7 @@ namespace WallpaperApp
         const UInt32 SWP_NOOWNERZORDER = 0x0200;
         const UInt32 SWP_NOSENDCHANGING = 0x0400;
         const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
+        IntPtr windowHandle2 = IntPtr.Zero;
 
         public MainWindow()
         {
@@ -63,7 +64,7 @@ namespace WallpaperApp
             //string cmdstr = "C:\\Users\\YongMao\\Desktop\\Dynamicon\\electron-v2.0.1-win32-x64\\electron.exe C:\\Users\\YongMao\\Desktop\\Dynamicon\\my_app";
             c.execute(cmdstr);
             IntPtr desktophandle = Win32.User32.GetDesktopWindow();
-            IntPtr windowHandle2 = IntPtr.Zero;
+            
             //抓取electron窗口句柄
             System.Threading.Thread.Sleep(1000);
             while (windowHandle2 == IntPtr.Zero)
@@ -97,8 +98,8 @@ namespace WallpaperApp
             Win32.User32.keybd_event((byte)Keys.Tab, 0, 0, 0);//按下tab
             Win32.User32.keybd_event((byte)Keys.LWin, 0, 2, 0);//释放LWIN
             Win32.User32.keybd_event((byte)Keys.Tab, 0, 2, 0);//释放tab
-            //Win32.User32.keybd_event((byte)Keys.Escape, 0, 0, 0);//按下Esc
-            //Win32.User32.keybd_event((byte)Keys.Escape, 0, 2, 0);//释放Esc
+            Win32.User32.keybd_event((byte)Keys.Escape, 0, 0, 0);//按下Esc
+            Win32.User32.keybd_event((byte)Keys.Escape, 0, 2, 0);//释放Esc
             //SendKeys.SendWait("{ESC}");
         }
 
@@ -141,12 +142,12 @@ namespace WallpaperApp
                 this.Show();
             });
 
-            MenuItem closeItem3 = new MenuItem();
-            closeItem3.Text = "设置";
-            closeItem3.Click += new EventHandler(delegate
-            {
-                //function
-            });
+            //MenuItem closeItem3 = new MenuItem();
+            //closeItem3.Text = "选择文件";
+            //closeItem3.Click += new EventHandler(delegate
+            //{
+            //    //function
+            //});
 
             MenuItem closeItem2 = new MenuItem();
             closeItem2.Text = "资源管理器";
@@ -168,7 +169,7 @@ namespace WallpaperApp
             });
 
             menu.MenuItems.Add(closeItem4);
-            menu.MenuItems.Add(closeItem3);
+            //menu.MenuItems.Add(closeItem3);
             menu.MenuItems.Add(closeItem2);
             menu.MenuItems.Add(closeItem);
             trayIcon.ContextMenu = menu;//设置NotifyIcon的右键弹出菜单
@@ -207,9 +208,29 @@ namespace WallpaperApp
             Environment.Exit(0);
         }
 
-        private void Setting_click(object sender, RoutedEventArgs e)
+        private void File_click(object sender, RoutedEventArgs e)
         {
-            //function
+            String FilePath;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Filter = "视频|*.mp4;*.wmv;*.avi;*.mkv;*.";
+            openFileDialog.Multiselect = false;
+            DialogResult dialogResult = openFileDialog.ShowDialog();
+            if (dialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                FilePath = openFileDialog.FileName;
+                CommonUtils.FileProcessor p = new CommonUtils.FileProcessor("./my_app/js/background.js");
+                p.changeVideoPath(FilePath);
+
+                Win32.User32.SwitchToThisWindow(windowHandle2, true);
+                Win32.User32.keybd_event(0x11, 0, 0, 0);//按下ctrl
+                Win32.User32.keybd_event(0x10, 0, 0, 0);//按下shift
+                Win32.User32.keybd_event(82, 0, 0, 0);//按下R
+                Win32.User32.keybd_event(0x11, 0, 2, 0);//释放ctrl
+                Win32.User32.keybd_event(0x10, 0, 2, 0);//释放shift
+                Win32.User32.keybd_event(82, 0, 2, 0);//释放R
+
+            }
+
         }
 
         private void btnFull_Checked(object sender, RoutedEventArgs e)
