@@ -715,7 +715,7 @@ pre code {
 
 /*** effect origin ***/
 
-.icon {
+.origin {
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -723,7 +723,7 @@ pre code {
     -o-transition: all .2s ease-in-out;
 }
 
-.icon:hover {
+.origin:hover {
     transform: skew(10deg);
     transform-origin: top left;
     -webkit-transform: skew(10deg);
