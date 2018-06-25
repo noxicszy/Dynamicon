@@ -11,16 +11,32 @@
         };
     </script>
     <script src="js/jquery.ripples.js"></script>
-    <!-- <link rel="stylesheet" href="css/dominoStyle.css"> -->
+    <link rel="stylesheet" href="css/dominoStyle.css">
     
     <!-- 各种效果可供选用，注意这些效果需要classname 为 icon-hover -->
     <!-- 从上到下，效果依次为 向左旋转，缩小，放大，倾斜，旋转放大 -->
     <!-- <link rel="stylesheet" href="css/img-rotate-left.css"> -->
     <!-- <link rel="stylesheet" href="css/img-zoom-out.css"> -->
     <!-- <link rel="stylesheet" href="css/img-zoom-in.css"> -->
-    <link rel="stylesheet" href="css/img-origin.css">
+    <!-- <link rel="stylesheet" href="css/img-origin.css"> -->
     <!-- <link rel="stylesheet" href="css/img-rotate-scale.css"> -->
 
+    <script>
+        var IconStyle;
+        var IconCSSs = new Array();
+        IconCSSs[0] = '<link rel="stylesheet" href="css/dominoStyle.css">';
+        IconCSSs[1] = '<link rel="stylesheet" href="css/img-rotate-left.css">';
+        IconCSSs[2] = '<link rel="stylesheet" href="css/img-origin.css">';
+        IconCSSs[3] = '<link rel="stylesheet" href="css/img-rotate-scale.css">';
+
+        const fs2 = require('fs');
+        IconStyle = fs2.readFileSync('my_app/Style.txt', 'utf-8');
+        IconStyle = Number(IconStyle);
+        console.log(IconStyle);
+        document.write(IconCSSs[IconStyle-1]);
+        
+        
+    </script>
     <!-- <link rel="stylesheet" href="css/jelly.css"> -->
 </head>
 
