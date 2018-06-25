@@ -6,31 +6,36 @@
         xmlns:local="clr-namespace:WallpaperApp"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Dynamicon" Loaded="Window_Loaded" Width="480" Height="200" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White">
+        Title="Dynamicon" Loaded="Window_Loaded" Width="480" Height="474" ResizeMode="NoResize" Closing="MetroWindow_Closing" Background="White">
     <Grid>
-        <GroupBox Header="主界面" HorizontalAlignment="Left" Height="172" Margin="0,0,0,0" VerticalAlignment="Top" Width="480">
+        <GroupBox Header="主界面" HorizontalAlignment="Left" Height="442" Margin="0,0,0,0" VerticalAlignment="Top" Width="480">
             <Grid>
-                <ListBox>
+                
+                <ListBox Margin="0,128,0,-128">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="5" Height="30"/>
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
 
-                    <ListBoxItem MouseDoubleClick="Style1">样式1</ListBoxItem>
-                    <ListBoxItem MouseDoubleClick="Style2">样式2</ListBoxItem>
-                    <ListBoxItem MouseDoubleClick="Style3">样式3</ListBoxItem>
-                    <ListBoxItem MouseDoubleClick="Style4">样式4</ListBoxItem>
-                    <ListBoxItem MouseDoubleClick="Style5">样式5</ListBoxItem>
+                    <ListBoxItem MouseDoubleClick="Style1">多米诺</ListBoxItem>
+                    <ListBoxItem MouseDoubleClick="Style2">歪头杀</ListBoxItem>
+                    <ListBoxItem MouseDoubleClick="Style3">意大利斜体</ListBoxItem>
+                    <ListBoxItem MouseDoubleClick="Style4">旋转放大</ListBoxItem>
+                    <ListBoxItem MouseDoubleClick="Style5">日式轮廓</ListBoxItem>
                 </ListBox>
                 
-                <Button Margin="340, 85, 60, 15" Content="退出" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Exit_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
-                <Button Margin="240, 85, 160, 15" Content="选择壁纸" FontFamily="Microsoft YaHei UI" FontSize="12" Click="File_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
+                <Border BorderBrush="#CC119EDA" BorderThickness="0" HorizontalAlignment="Left" Height="270" Margin="0" VerticalAlignment="Top" Width="480" Background="Black" MouseDown="Border_MouseDown">
+                    <MediaElement x:Name="media" Margin="0" Width="472" Height="270" Volume="1" Source="" MouseDown="media_MouseDown" />
+                </Border>
+                
+                <Button Margin="340, 355, 60, 15" Content="退出" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Exit_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
+                <Button Margin="240, 355, 160, 15" Content="选择壁纸" FontFamily="Microsoft YaHei UI" FontSize="12" Click="File_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" RenderTransformOrigin="0.485,3.176" />
 
                 
 
-                <ToggleButton x:Name="btnFull" Margin="96,10,332,99" Foreground="#FF16DCF0" BorderBrush="#FFA8A8A8" Background="#CC119EDA" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="40" Checked="btnFull_Checked" Unchecked="btnFull_Unchecked" RenderTransformOrigin="0.6,-0.76" IsChecked="false"/>
-                <Label Content="开机启动" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81" Height="25"/>
+                <ToggleButton x:Name="btnFull" Margin="96,280,332,99" Foreground="#FF16DCF0" BorderBrush="#FFA8A8A8" Background="#CC119EDA" VerticalAlignment="Center" HorizontalAlignment="Center" Height="25" Width="40" Checked="btnFull_Checked" Unchecked="btnFull_Unchecked" RenderTransformOrigin="0.6,-0.76" IsChecked="false"/>
+                <Label Content="开机启动" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="81" Height="25"/>
                 <!--<Button Margin="240, 80, 160, 20" Content="设置" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Setting_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />-->
                 <!--<Slider HorizontalAlignment="Left" Margin="96,67,0,0" VerticalAlignment="Top" Width="80" Height="20" Value="80"/>-->
                 
