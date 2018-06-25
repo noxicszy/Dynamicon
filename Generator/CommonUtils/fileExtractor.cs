@@ -61,6 +61,7 @@ namespace CommonUtils {
             //遍历桌面文件
             foreach (FileInfo f in rootEx.GetFiles()) {
                 Image img;
+                if (f.Name == "desktop.ini") continue;
                 string filePath = path + f.Name;
 
                 img = System.Drawing.Icon.ExtractAssociatedIcon(filePath).ToBitmap();
@@ -100,6 +101,7 @@ namespace CommonUtils {
             foreach (FileInfo f in rootEx.GetFiles())
             {
                 Image img;
+                if (f.Name == "desktop.ini") continue;
                 string filePath = path + f.Name;
 
                 img = System.Drawing.Icon.ExtractAssociatedIcon(filePath).ToBitmap();
