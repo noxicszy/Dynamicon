@@ -70,6 +70,8 @@ namespace WallpaperApp
             while (windowHandle2 == IntPtr.Zero)
                 windowHandle2 = Win32.User32.FindWindow(null, "dynamicon");
 
+            
+
             //抓取桌面层句柄
             IntPtr desktopHandle = Win32.User32.FindWindow("Progman", null);
             IntPtr zero;
@@ -90,6 +92,7 @@ namespace WallpaperApp
             //桌面层置顶
             Win32.User32.SetWindowPos(windowHandle2, IntPtr.Zero, 0, 0, w, h, TOPMOST_FLAGS);
             InitializeComponent();
+            media.UnloadedBehavior = MediaState.Manual;
             Win32.User32.keybd_event((byte)Keys.LWin, 0, 0, 0);//按下LWIN
             Win32.User32.keybd_event((byte)Keys.Tab, 0, 0, 0);//按下tab
             Win32.User32.keybd_event((byte)Keys.LWin, 0, 2, 0);//释放LWIN
@@ -293,6 +296,9 @@ namespace WallpaperApp
                 FilePath = openFileDialog.FileName;
                 CommonUtils.FileProcessor p = new CommonUtils.FileProcessor("./my_app/js/background.js");
                 p.changeVideoPath(FilePath);
+                media.Stop();
+                media.Source = new Uri(FilePath);
+                media.Play();
                 refreshWindow();
             }
 
@@ -326,6 +332,15 @@ namespace WallpaperApp
                 //System.Windows.Forms.MessageBox.Show("已取消开机自启动！");
             }
             else trayIcon.ShowBalloonTip(1000, "提示", "设置自启动失败，请以管理员身份运行！", ToolTipIcon.Info);
+        }
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void media_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            media.Pause();
         }
 
     }
