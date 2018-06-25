@@ -36,9 +36,9 @@ function displayOneIcon(IconStr) {
     var div = document.createElement("div");
     div.className = "icon";
     var arr = IconStr.split('\t');
-
+    var appName = arr[0].split('.lnk')[0].split('.url')[0];
     var htmlStr ='<a href = "#" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
-    htmlStr = htmlStr.format({ 'a': arr[0], 'b': arr[0], 'c': arr[0]});
+    htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0], 'c': appName});
     
     div.innerHTML = htmlStr;
     return div;
