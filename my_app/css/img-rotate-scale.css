@@ -914,7 +914,7 @@ pre code {
 
 /*** effect rotate-scale ***/
 
-.icon {
+.origin {
     transition: all 1.2s ease-in-out;
     -webkit-transition: all 1.2s ease-in-out;
     -moz-transition: all 1.2s ease-in-out;
@@ -922,7 +922,7 @@ pre code {
     -o-transition: all 1.2s ease-in-out;
 }
 
-.icon:hover {
+.origin:hover {
     transform: rotate(720deg) scale(2, 2);
     -webkit-transform: rotate(720deg) scale(2, 2);
     -moz-transform: rotate(720deg) scale(2, 2);

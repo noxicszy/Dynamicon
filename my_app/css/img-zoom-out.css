@@ -330,7 +330,7 @@ pre code {
 
 /*** effect zoom out ***/
 
-.icon img {
+.origin img {
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -338,7 +338,7 @@ pre code {
     -o-transition: all .2s ease-in-out;
 }
 
-.icon:hover img {
+.origin:hover img {
     transform: scale(0.9);
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);

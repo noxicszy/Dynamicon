@@ -371,7 +371,7 @@ pre code {
 
 /* img-rotate-left */
 
-.icon img {
+.origin img {
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -379,7 +379,7 @@ pre code {
     -o-transition: all .2s ease-in-out;
 }
 
-.icon:hover img {
+.origin:hover img {
     transform: rotate(-20deg);
     -webkit-transform: rotate(-20deg);
     -moz-transform: rotate(-20deg);
