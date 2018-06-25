@@ -218,8 +218,10 @@ namespace WallpaperApp
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
             {
                 FilePath = openFileDialog.FileName;
+                CommonUtils.FileProcessor p = new CommonUtils.FileProcessor("./my_app/js/background.js");
+                p.changeVideoPath(FilePath);
+
                 Win32.User32.SwitchToThisWindow(windowHandle2, true);
-                //System.Diagnostics.Process.Start("Explorer.exe");
                 Win32.User32.keybd_event(0x11, 0, 0, 0);//按下ctrl
                 Win32.User32.keybd_event(0x10, 0, 0, 0);//按下shift
                 Win32.User32.keybd_event(82, 0, 0, 0);//按下R
