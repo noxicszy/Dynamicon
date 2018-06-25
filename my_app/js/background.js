@@ -7,12 +7,12 @@ var ifRipple = true;
 if(mode=="image"){
     background = document.createElement("img");
     background.id = "background";
-    background.src = "D:/Program Files/OneDrive/Pictures/寝室.jpg";
+    background.src = "./images/background.png";
 }
 else if(mode=="video"){
     background = document.createElement("video");
     background.id = "background";
-    background.src = "D:/Program Files/OneDrive - 星空/CNDOTA BESTDOTA.mp4";
+    background.src = "videos/background2.mp4";
     background.autoplay = "autoplay"
     background.loop = "loop";
 }

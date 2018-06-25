@@ -20,6 +20,10 @@ namespace CommonUtils
         {
             sr = new StreamReader(filePath);
             str = sr.ReadToEnd();
+            String[] tmp = str.Split('\n');
+            mode = tmp[3].Substring(12, 5);
+            lastPicPath = tmp[9].Substring(22, tmp[9].Length - 24);
+            lastVideoPath = tmp[14].Substring(22, tmp[14].Length - 24);
             sr.Close();
             FilePath = filePath;
             Console.WriteLine(str);
@@ -35,7 +39,7 @@ namespace CommonUtils
                     str = str.Replace("mode = \"video\"", "mode = \"image\"");
                     mode = "image";
                 }
-                str = str.Replace(lastPicPath, ss);
+                str = str.Replace(lastPicPath, ss + "\";");
                 sw = new StreamWriter(FilePath);
                 sw.Write(str);
                 sw.Close();
@@ -49,7 +53,7 @@ namespace CommonUtils
                     str = str.Replace("mode = \"image\"", "mode = \"video\"");
                     mode = "video";
                 }
-                str = str.Replace(lastVideoPath, ss);
+                str = str.Replace(lastVideoPath, ss + "\";");
                 sw = new StreamWriter(FilePath);
                 sw.Write(str);
                 sw.Close();

@@ -12,7 +12,7 @@ namespace CommonUtils {
 
     public class fileExtractor {
 
-        String path;
+        String path, path2;
         String WorkDirectory = System.IO.Directory.GetCurrentDirectory();
         StreamWriter sw = null;
         public fileExtractor() {
@@ -93,6 +93,45 @@ namespace CommonUtils {
                     Console.WriteLine("link saving error!");
                 }
                 
+            }
+            path = "C:\\Users\\Public\\Desktop\\";
+            rootEx = new DirectoryInfo(path);
+            //遍历桌面文件
+            foreach (FileInfo f in rootEx.GetFiles())
+            {
+                Image img;
+                string filePath = path + f.Name;
+
+                img = System.Drawing.Icon.ExtractAssociatedIcon(filePath).ToBitmap();
+                //提取图片
+                try
+                {
+                    img.Save(WorkDirectory + "\\my_app\\images\\icons\\" + f.Name + ".jpg");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("image saving error!");
+                }
+                //写入文件信息:文件名\t桌面路径\t实际路径
+                try
+                {
+                    //文件名
+                    sw.Write(f.Name + '\t');
+                    //桌面路径
+                    sw.Write(filePath + '\t');
+                    //实际路径(对于非快捷方式,路径同桌面路径)
+                    if (f.Name.Contains("lnk"))
+                    {
+                        IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(filePath);
+                        sw.WriteLine(shortcut.TargetPath);
+                    }
+                    else sw.WriteLine(filePath);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("link saving error!");
+                }
+
             }
             if (sw != null) sw.Close();
         }
