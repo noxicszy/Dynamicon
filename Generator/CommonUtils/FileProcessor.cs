@@ -32,7 +32,7 @@ namespace CommonUtils
         public void changeVideoPath(String ss) {
             ss = ss.Replace("\\", "/");
             String tmp = ss.Remove(0, ss.Length - 3);
-            if (tmp == "jpg" || tmp == "png" || tmp == "bmp")
+            if (tmp == "jpg" || tmp == "png" || tmp == "bmp" || tmp =="gif")
             {
                 if (mode == "video")
                 {
