@@ -42,14 +42,19 @@ function displayOneIcon(IconStr) {
     
 
     // chenhongbin
-    var htmlStr ='<a href = "#" class="origin" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
-    htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0], 'c': appName });
+    //var htmlStr ='<a href = "#" class="origin" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
+    //htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0], 'c': appName });
 
     // // Domino
     // var htmlStr = '<a href = "#" id = "{a}"> <div> <figure style="background: url(images/icons/{b}.jpg); background-size: 100%;" > <figcaption> {c} </figcaption> </figure > </div > </a>';
     // const reg = new RegExp(' ', "g")
     // htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0].replace(reg, '%20'), 'c': appName });
-    
+
+    //case-item
+    var htmlStr ='<div class="case-item"> <div class="ih-item circle effect1"> <a href="#" id = "{a}"> <div class="spinner"></div> <div class="img"><img src="images/icons/{b}.jpg"></div> <div class="info"><div class="info-back"><p>{c}</p></div></div></a></div></div>'
+    htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0], 'c': appName });
+
+
     div.innerHTML = htmlStr;
     return div;
     
