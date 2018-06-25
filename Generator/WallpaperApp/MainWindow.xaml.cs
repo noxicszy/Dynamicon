@@ -103,6 +103,17 @@ namespace WallpaperApp
             //SendKeys.SendWait("{ESC}");
         }
 
+        private void refreshWindow()
+        {
+            Win32.User32.SwitchToThisWindow(windowHandle2, true);
+            Win32.User32.keybd_event(0x11, 0, 0, 0);//按下ctrl
+            Win32.User32.keybd_event(0x10, 0, 0, 0);//按下shift
+            Win32.User32.keybd_event(82, 0, 0, 0);//按下R
+            Win32.User32.keybd_event(0x11, 0, 2, 0);//释放ctrl
+            Win32.User32.keybd_event(0x10, 0, 2, 0);//释放shift
+            Win32.User32.keybd_event(82, 0, 2, 0);//释放R
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AddTrayIcon();
@@ -198,6 +209,68 @@ namespace WallpaperApp
         }
 
 
+        FileStream fs;
+        StreamWriter sw;
+
+        private void Style1(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("my_app\\Style.txt"))
+                System.IO.File.Delete("my_app\\Style.txt");
+            fs = new FileStream("my_app\\Style.txt", FileMode.CreateNew);
+            sw = new StreamWriter(fs);
+            sw.WriteLine("1");
+            sw.Close();
+            fs.Close();
+            refreshWindow();
+        }
+
+        private void Style2(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("my_app\\Style.txt"))
+                System.IO.File.Delete("my_app\\Style.txt");
+            fs = new FileStream("my_app\\Style.txt", FileMode.CreateNew);
+            sw = new StreamWriter(fs);
+            sw.WriteLine("2");
+            sw.Close();
+            fs.Close();
+            refreshWindow();
+        }
+
+        private void Style3(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("my_app\\Style.txt"))
+                System.IO.File.Delete("my_app\\Style.txt");
+            fs = new FileStream("my_app\\Style.txt", FileMode.CreateNew);
+            sw = new StreamWriter(fs);
+            sw.WriteLine("3");
+            sw.Close();
+            fs.Close();
+            refreshWindow();
+        }
+
+        private void Style4(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("my_app\\Style.txt"))
+                System.IO.File.Delete("my_app\\Style.txt");
+            fs = new FileStream("my_app\\Style.txt", FileMode.CreateNew);
+            sw = new StreamWriter(fs);
+            sw.WriteLine("4");
+            sw.Close();
+            fs.Close();
+            refreshWindow();
+        }
+
+        private void Style5(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("my_app\\Style.txt"))
+                System.IO.File.Delete("my_app\\Style.txt");
+            fs = new FileStream("my_app\\Style.txt", FileMode.CreateNew);
+            sw = new StreamWriter(fs);
+            sw.WriteLine("5");
+            sw.Close();
+            fs.Close();
+            refreshWindow();
+        }
 
         private void Exit_click(object sender, RoutedEventArgs e)
         {
@@ -220,15 +293,7 @@ namespace WallpaperApp
                 FilePath = openFileDialog.FileName;
                 CommonUtils.FileProcessor p = new CommonUtils.FileProcessor("./my_app/js/background.js");
                 p.changeVideoPath(FilePath);
-
-                Win32.User32.SwitchToThisWindow(windowHandle2, true);
-                Win32.User32.keybd_event(0x11, 0, 0, 0);//按下ctrl
-                Win32.User32.keybd_event(0x10, 0, 0, 0);//按下shift
-                Win32.User32.keybd_event(82, 0, 0, 0);//按下R
-                Win32.User32.keybd_event(0x11, 0, 2, 0);//释放ctrl
-                Win32.User32.keybd_event(0x10, 0, 2, 0);//释放shift
-                Win32.User32.keybd_event(82, 0, 2, 0);//释放R
-
+                refreshWindow();
             }
 
         }

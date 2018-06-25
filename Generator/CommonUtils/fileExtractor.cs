@@ -20,6 +20,9 @@ namespace CommonUtils {
             try
             {
                 FileStream fs;
+                //先进行删除以保证运行稳定
+                if (System.IO.File.Exists("my_app\\iconList.txt"))
+                    System.IO.File.Delete("my_app\\iconList.txt");
                 //创建输出流，将得到文件名子目录名保存到txt中
                 //判断文件是否存在,不存在则新建
                 if (!System.IO.File.Exists("my_app\\iconList.txt"))

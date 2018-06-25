@@ -1,4 +1,1 @@
-desktop.ini	C:\Users\YongMao\Desktop\desktop.ini	C:\Users\YongMao\Desktop\desktop.ini
-新建 Microsoft Word Document.docx	C:\Users\YongMao\Desktop\新建 Microsoft Word Document.docx	C:\Users\YongMao\Desktop\新建 Microsoft Word Document.docx
-新建 Text Document.txt	C:\Users\YongMao\Desktop\新建 Text Document.txt	C:\Users\YongMao\Desktop\新建 Text Document.txt
-desktop.ini	C:\Users\Public\Desktop\desktop.ini	C:\Users\Public\Desktop\desktop.ini
+新建 Microsoft Excel Worksheet.xlsx	C:\Users\YongMao\Desktop\新建 Microsoft Excel Worksheet.xlsx	C:\Users\YongMao\Desktop\新建 Microsoft Excel Worksheet.xlsx
