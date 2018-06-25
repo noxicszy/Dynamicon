@@ -40,17 +40,9 @@ function displayOneIcon(IconStr) {
     // var htmlStr ='<a href = "#" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
     // htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0], 'c': appName });
 
-<<<<<<< HEAD
     var htmlStr = '<a href = "#" id = "{a}" > <img src = "images/icons/{b}.jpg" >  <br /> {c} </a>';
     htmlStr = htmlStr.format({ 'a': arr[0], 'b': arr[0], 'c': arr[0] });
 
-=======
-    var htmlStr = '<a href = "#" id = "{a}"> <div> <figure style="background: url(images/icons/{b}.jpg); background-size: 100%;" > <figcaption> {c} </figcaption> </figure > </div > </a>';
-    const reg = new RegExp(' ', "g")
-    htmlStr = htmlStr.format({ 'a': appName, 'b': arr[0].replace(reg, '%20'), 'c': appName });
-    
->>>>>>> 0d88e217b675b07bd723e61955535c4dbe7b5fae
     div.innerHTML = htmlStr;
     return div;
-
 }
