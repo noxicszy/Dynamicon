@@ -1,18 +1,18 @@
 // use this js to set background, including image or video, and whether it ripples
 
 var background;
-var mode="video";
+var mode = "video";
 var ifRipple = true;
 
 if(mode=="image"){
     background = document.createElement("img");
     background.id = "background";
-    background.src = "./images/background.png";
+    background.src = "D:/Program Files/OneDrive/Pictures/寝室.jpg";
 }
 else if(mode=="video"){
     background = document.createElement("video");
     background.id = "background";
-    background.src = "D:/Program Files/OneDrive - 星空/Some Sundry/programData/Spy Rion gets Captured and Fucked Hardcore.MP4";
+    background.src = "D:/Program Files/OneDrive - 星空/CNDOTA BESTDOTA.mp4";
     background.autoplay = "autoplay"
     background.loop = "loop";
 }

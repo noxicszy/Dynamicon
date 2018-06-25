@@ -1,7 +1,7 @@
 // use this js to set background, including image or video, and whether it ripples
 
 var background;
-var mode="video";
+var mode = "video";
 var ifRipple = true;
 
 if(mode=="image"){

@@ -13,7 +13,9 @@ namespace CommonUtils
         private StreamReader sr;
         private StreamWriter sw;
         private String FilePath;
-        static private String lastPath = "videos/background2.mp4";
+        static private String mode = "video";
+        static private String lastVideoPath = "videos/background2.mp4";
+        static private String lastPicPath = "./images/background.png";
         public FileProcessor(String filePath)
         {
             sr = new StreamReader(filePath);
@@ -25,12 +27,36 @@ namespace CommonUtils
 
         public void changeVideoPath(String ss) {
             ss = ss.Replace("\\", "/");
-            str = str.Replace(lastPath, ss);
-            sw = new StreamWriter(FilePath);
-            sw.Write(str);
-            sw.Close();
-            Console.WriteLine(str);
-            lastPath = ss;
+            String tmp = ss.Remove(0, ss.Length - 3);
+            if (tmp == "jpg" || tmp == "png" || tmp == "bmp")
+            {
+                if (mode == "video")
+                {
+                    str = str.Replace("mode = \"video\"", "mode = \"image\"");
+                    mode = "image";
+                }
+                str = str.Replace(lastPicPath, ss);
+                sw = new StreamWriter(FilePath);
+                sw.Write(str);
+                sw.Close();
+                Console.Write(str);
+                lastPicPath = ss;
+            }
+            else
+            {
+                if (mode == "image")
+                {
+                    str = str.Replace("mode = \"image\"", "mode = \"video\"");
+                    mode = "video";
+                }
+                str = str.Replace(lastVideoPath, ss);
+                sw = new StreamWriter(FilePath);
+                sw.Write(str);
+                sw.Close();
+                Console.WriteLine(str);
+                lastVideoPath = ss;
+            }
+
         }
     }
 }
