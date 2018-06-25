@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<link href="css/win10style.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script>if (typeof module === 'object') { window.jQuery = window.$ = module.exports; };</script>
-	<script src="js/jquery.ripples.js"></script>
-	<link rel="stylesheet" href="css/cubeStyle.css">
-	<link rel="stylesheet" href="css/dominoStyle.css">
-	<script src="js/prefixfree.min.js"></script>
 
+<head>
+    <meta charset="UTF-8">
+    <link href="css/win10style.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        if (typeof module === 'object') {
+            window.jQuery = window.$ = module.exports;
+        };
+    </script>
+    <script src="js/jquery.ripples.js"></script>
+    <link rel="stylesheet" href="css/cubeStyle.css">
+    <link rel="stylesheet" href="css/dominoStyle.css">
+    <script src="js/prefixfree.min.js"></script>
+
+    <!-- 各种效果可供选用，注意这些效果需要classname 为 icon-hover -->
+    <!-- 从上到下，效果依次为 向左旋转，缩小，放大，倾斜，旋转放大 -->
+    <!-- <link rel="stylesheet" href="css/img-rotate-left.css"> -->
+    <!-- <link rel="stylesheet" href="css/img-zoom-out.css"> -->
+    <!-- <link rel="stylesheet" href="css/img-zoom-in.css"> -->
+    <link rel="stylesheet" href="css/img-origin.css">
+    <!-- <link rel="stylesheet" href="css/img-rotate-scale.css"> -->
 </head>
 
 <body>
-	<div style="height: 100%">
+    <div style="height: 100%">
 
-	<div id="app">
+        <div id="app">
 
 
-		<!-- <li>
+            <!-- <li>
 			<a href="#" id="Typora">
 				<div id="trans3DDemo1">
 					<div id="trans3DBoxes1">
@@ -34,8 +46,8 @@
 				<br /> Typora
 			</a>
 		</li> -->
-		
-		<!-- <div>
+
+            <!-- <li>
 			<a href="#" id="Edge">
 			<div>
 				<figure style="background-image: url(../images/Edge.jpg)">
@@ -43,16 +55,17 @@
 				</figure>
 			</div>
 			</a>
-		</div>  -->
-		
-	</div>
+		</li>  -->
+
+        </div>
 
 
-	</div>
+    </div>
 
-	<script src='js/TweenMax.min.js'></script>
-	<script type="text/javascript" src="js/cubeIndex.js"></script>
-	
+    <script src='js/TweenMax.min.js'></script>
+    <script type="text/javascript" src="js/cubeIndex.js"></script>
+
+
 
 </body>
 
@@ -60,6 +73,11 @@
 
 <script src="js/background.js"></script>
 <script src="js/IconLayout.js"></script>
-<script>require('./js/file-manager.js');</script>
+<script>
+    require('./js/file-manager.js');
+</script>
+
 </html>
 
+
+</html>
