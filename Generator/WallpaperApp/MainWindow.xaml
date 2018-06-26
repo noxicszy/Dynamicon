@@ -26,7 +26,7 @@
                 </ListBox>
                 
                 <Border BorderBrush="#CC119EDA" BorderThickness="0" HorizontalAlignment="Left" Height="270" Margin="0" VerticalAlignment="Top" Width="480" Background="Black" MouseDown="Border_MouseDown">
-                    <MediaElement x:Name="media" Margin="0" Width="472" Height="270" Volume="1" Source="" MouseDown="media_MouseDown" />
+                    <MediaElement x:Name="media" Margin="0" Width="472" Height="270" Volume="0" Source="" MouseDown="media_MouseDown" />
                 </Border>
                 
                 <Button Margin="340, 355, 60, 15" Content="退出" FontFamily="Microsoft YaHei UI" FontSize="12" Click="Exit_click" FontWeight="Normal" Background="#FFD6D6D6" BorderBrush="#00CCCCCC" BorderThickness="0" />
