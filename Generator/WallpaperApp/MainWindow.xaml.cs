@@ -68,7 +68,7 @@ namespace WallpaperApp
             //抓取electron窗口句柄
             System.Threading.Thread.Sleep(1000);
             while (windowHandle2 == IntPtr.Zero)
-                windowHandle2 = Win32.User32.FindWindow(null, "dynamicon");
+                windowHandle2 = Win32.User32.FindWindow(null, "dynamiconWinform");
 
             
 
@@ -139,7 +139,8 @@ namespace WallpaperApp
             }
             trayIcon = new NotifyIcon
             {
-                Icon = Properties.Resources.icon,
+                //Icon = Properties.Resources.icon,
+                Icon = ico,
                 Text = "Dynamicon"
             };
             trayIcon.Visible = true;

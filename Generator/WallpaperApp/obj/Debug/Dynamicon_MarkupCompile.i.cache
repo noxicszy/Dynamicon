@@ -1,11 +1,11 @@
-﻿WallpaperApp
+﻿Dynamicon
 
 
 winexe
 C#
 .cs
 C:\Users\YongMao\Desktop\Dynamicon\Generator\WallpaperApp\obj\Debug\
-WallpaperApp
+Dynamicon
 none
 false
 DEBUG;TRACE
@@ -16,5 +16,5 @@ C:\Users\YongMao\Desktop\Dynamicon\Generator\WallpaperApp\App.xaml
 18-641286085
 MainWindow.xaml;UI\ToggleButton.xaml;
 
-True
+False
 

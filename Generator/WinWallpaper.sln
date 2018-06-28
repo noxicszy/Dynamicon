@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallpaperApp", "WallpaperApp\WallpaperApp.csproj", "{B0A81145-712A-4AE9-9708-923B9F713F98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamicon", "WallpaperApp\Dynamicon.csproj", "{B0A81145-712A-4AE9-9708-923B9F713F98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils", "CommonUtils\CommonUtils.csproj", "{5C3CEF00-75F8-4423-A50F-E9C5D7A07FCC}"
 EndProject

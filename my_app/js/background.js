@@ -1,18 +1,18 @@
 // use this js to set background, including image or video, and whether it ripples
 
 var background;
-var mode = "image";
+var mode = "video";
 var ifRipple = true;
 
 if(mode=="image"){
     background = document.createElement("img");
     background.id = "background";
-    background.src = "D:/Program Files/OneDrive/Pictures/Menhera-chan+-+SR汉化/Menhera-chan - SR汉化/9.jpg";;
+    background.src = "D:/Program Files/OneDrive/Pictures/Menhera-chan+-+SR汉化/Menhera-chan - SR汉化/8.jpg";;
 }
 else if(mode=="video"){
     background = document.createElement("video");
     background.id = "background";
-    background.src = "videos/background2.mp4";
+    background.src = "D:/Program Files/OneDrive - 星空/CNDOTA BESTDOTA.mp4";;
     background.autoplay = "autoplay"
     background.loop = "loop";
 }
